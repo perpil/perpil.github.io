@@ -1,1 +1,9 @@
+<h1>BoingBoing Comment Fixer<h1>
+
+<h2>Bookmarklet</h2>
+This bookmarklet will take you to the comments for a BoingBoing post.  To install, drag the link below to your bookmarks toolbar.  To use, click the bookmark in your toolbar when you are on a BoingBoing post.
+
 <a href="javascript:(function()%7Bif(location.host%20%3D%3D%20'boingboing.net')%7B%0Alet%20bbs%20%3D%20document.querySelector('a.bbs').href%3B%0Alet%20title%20%3D%20document.querySelector('h1.entry-title')%3F.textContent%3B%0Alet%20hasWeirdChars%20%3D%20title%20%26%26%20title.match(%2F%5B%5C%2F*%3A%5D%2F)%3B%0Alocation.href%3Dbbs.includes('bbs')%3Fbbs%3A'https%3A%2F%2Fbbs.boingboing.net%2Ft%2F'%20%2B%20(hasWeirdChars%3Ftitle.replaceAll(%2F%5B%5E%5Cw%3A%20*%5D%2Fg%2C'').replaceAll(%2F%5B%5CW%5D%2B%2Fg%2C'-').toLowerCase()%3A%2F.*%5C%2F(.*)%5C.html%24%2F.exec(location.pathname)%5B1%5D)%3B%20%0A%7D%7D)()%3B">BB Comments</a>
+
+<h2>TamperMonkey script</h2>
+If you want a better solution, install <a href="https://tampermonkey.net" target="_blank">TamperMonkey</a> and then install this <a href="/userscripts/BBCommentsFixer.user.js">script</a>.  It will detect broken comments links on BoingBoing and update them so they just work.

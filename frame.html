@@ -1,0 +1,10 @@
+<html>
+<head>
+    <script>
+        window.addEventListener('message', async function (event) {
+            console.log(event.origin);
+            event.source.window.postMessage(eval(event.data), event.origin);
+        });
+    </script>
+</head>
+</html>

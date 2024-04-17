@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         BB Comment Fixer
 // @namespace    http://tampermonkey.net/
-// @version      1.03
+// @version      1.04
 // @description  Fixes broken comments links on BoingBoing
 // @author       David Behroozi
 // @match        https://boingboing.net
@@ -21,7 +21,7 @@
         let title = document.querySelector('h1.entry-title')?.textContent;
         let hasWeirdChars = title && title.match(/[\/*:]/);
         bbs.href = href.includes('https://bbs.boingboing.net/t/') ? href : 'https://bbs.boingboing.net/t/' + (hasWeirdChars ?
-                                                                                title.replaceAll(/[^-\/\w: *]/g,'').replaceAll(/[\W]+/g,'-').toLowerCase() :
+                                                                                title.replaceAll(/[^-,\/\w: *]/g,'').replaceAll(/[\W]+/g,'-').toLowerCase() :
                                                                                 /.*\/(.*)\.html$/.exec(location.pathname)[1]);
     }
 })();
